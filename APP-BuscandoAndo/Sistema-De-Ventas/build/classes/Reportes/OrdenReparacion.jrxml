@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdenReparacion" language="groovy" pageWidth="595" pageHeight="420" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c857bf48-41c2-4fd3-b524-da0949c26d9b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" mode="Transparent" forecolor="#CC0033" backcolor="#006666" fill="Solid" radius="10" scaleImage="RetainShape" hAlign="Center" vAlign="Middle" rotation="None" markup="none" pattern="" isBlankWhenNull="false" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="true">
+		<pen lineStyle="Solid"/>
+		<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+			<pen lineWidth="3.25"/>
+			<topPen lineWidth="3.25"/>
+			<leftPen lineWidth="3.25"/>
+			<bottomPen lineWidth="3.25"/>
+			<rightPen lineWidth="3.25"/>
+		</box>
+		<paragraph lineSpacing="Single" tabStopWidth="40"/>
+	</style>
+	<parameter name="REP_ID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     REPARACION.`REP_ID` AS REPARACION_REP_ID,
+     REPARACION.`PER_ID` AS REPARACION_PER_ID,
+     REPARACION.`FECHA` AS REPARACION_FECHA,
+     REPARACION.`IMEI` AS REPARACION_IMEI,
+     REPARACION.`MARCA` AS REPARACION_MARCA,
+     REPARACION.`FECHA_DE_ENTREGA` AS REPARACION_FECHA_DE_ENTREGA,
+     IF(REPARACION.`BATERIA` = 0, 'NO', 'SI') AS REPARACION_BATERIA,
+     IF(REPARACION.`CHIP` = 0, 'NO', 'SI') AS REPARACION_CHIP,
+     IF(REPARACION.`MEMORIA` = 0, 'NO', 'SI') AS REPARACION_MEMORIA,
+     IF(REPARACION.`TAPA` = 0, 'NO', 'SI') AS REPARACION_TAPA,
+     IF(REPARACION.`CARGADOR` = 0, 'NO', 'SI') AS REPARACION_CARGADOR,
+     REPARACION.`OTROS` AS REPARACION_OTROS,
+     REPARACION.`DIAGNOSTICO` AS REPARACION_DIAGNOSTICO,
+     REPARACION.`TOTAL` AS REPARACION_TOTAL,
+     REPARACION.`ABONO` AS REPARACION_ABONO,
+     REPARACION.`SALDO` AS REPARACION_SALDO,
+     REPARACION.`ESTADO` AS REPARACION_ESTADO,
+     PERSONA.`PER_ID` AS PERSONA_PER_ID,
+     PERSONA.`PER_CEDULA` AS PERSONA_PER_CEDULA,
+     PERSONA.`PER_NOMBRE` AS PERSONA_PER_NOMBRE,
+     PERSONA.`PER_DIRECCION` AS PERSONA_PER_DIRECCION,
+     PERSONA.`PER_TELEFONO` AS PERSONA_PER_TELEFONO,
+     PERSONA.`PER_CORREO` AS PERSONA_PER_CORREO,
+     PERSONA.`PER_SEXO` AS PERSONA_PER_SEXO
+FROM
+     `REPARACION` REPARACION INNER JOIN `PERSONA` PERSONA ON REPARACION.`PER_ID` = PERSONA.`PER_ID`
+WHERE
+     REPARACION.`REP_ID` = $P{REP_ID}]]>
+	</queryString>
+	<field name="REPARACION_REP_ID" class="java.lang.Integer"/>
+	<field name="REPARACION_PER_ID" class="java.lang.Integer"/>
+	<field name="REPARACION_FECHA" class="java.sql.Timestamp"/>
+	<field name="REPARACION_IMEI" class="java.lang.String"/>
+	<field name="REPARACION_MARCA" class="java.lang.String"/>
+	<field name="REPARACION_FECHA_DE_ENTREGA" class="java.sql.Timestamp"/>
+	<field name="REPARACION_BATERIA" class="java.lang.String"/>
+	<field name="REPARACION_CHIP" class="java.lang.String"/>
+	<field name="REPARACION_MEMORIA" class="java.lang.String"/>
+	<field name="REPARACION_TAPA" class="java.lang.String"/>
+	<field name="REPARACION_CARGADOR" class="java.lang.String"/>
+	<field name="REPARACION_OTROS" class="java.lang.String"/>
+	<field name="REPARACION_DIAGNOSTICO" class="java.lang.String"/>
+	<field name="REPARACION_TOTAL" class="java.lang.Double"/>
+	<field name="REPARACION_ABONO" class="java.lang.Double"/>
+	<field name="REPARACION_SALDO" class="java.lang.Double"/>
+	<field name="REPARACION_ESTADO" class="java.lang.Boolean"/>
+	<field name="PERSONA_PER_ID" class="java.lang.Integer"/>
+	<field name="PERSONA_PER_CEDULA" class="java.lang.String"/>
+	<field name="PERSONA_PER_NOMBRE" class="java.lang.String"/>
+	<field name="PERSONA_PER_DIRECCION" class="java.lang.String"/>
+	<field name="PERSONA_PER_TELEFONO" class="java.lang.String"/>
+	<field name="PERSONA_PER_CORREO" class="java.lang.String"/>
+	<field name="PERSONA_PER_SEXO" class="java.lang.String"/>
+	<variable name="REPARACION_BATERIA_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{REPARACION_BATERIA}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="402" y="0" width="125" height="26" uuid="5ba56ca6-71b2-4f2c-ad41-45fb57b698b3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA DE VENTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="0" width="190" height="13" uuid="ffb73047-65a7-4a9f-9f56-78f57853786c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Simón Bolívar 15-16 y Coronel Talbot ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="0" width="9" height="13" uuid="f148074a-abd3-49f7-82d7-d473a5d212b0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="jaimeg"/>
+				</textElement>
+				<text><![CDATA[F]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="13" width="64" height="13" uuid="a4132c4b-82ac-49e0-b50c-b86e5668411b"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[0995545597 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="13" width="9" height="13" uuid="d9a13bf9-d69d-4d11-87ff-5d75e5393864"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="jaimeg"/>
+				</textElement>
+				<text><![CDATA[B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="13" width="64" height="13" uuid="d30c45eb-6043-4310-8910-434143c98b5d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[074044034]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="26" width="86" height="13" uuid="eb0261f1-6017-4abc-948b-7b2e8958b33c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TechnologiesCell]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="13" width="9" height="13" uuid="4a62e738-f8fa-48e9-bc39-26f45d6947ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="jaimeg"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="26" width="27" height="13" uuid="71789513-290e-4a42-b57b-9d42332ab1af"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Social Shapes" size="14"/>
+				</textElement>
+				<text><![CDATA[X ^]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="55" width="34" height="15" uuid="cf4978ce-a408-4de5-b8fe-612a9fddb43b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="26" width="35" height="20" forecolor="#FF0033" uuid="d4050e57-5ea4-49e4-b4da-c2696e414ea5"/>
+				<textElement>
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="414" y="55" width="141" height="15" uuid="a718fbfd-f8fa-4d6f-a918-dee420fcd4be"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="26" width="100" height="20" forecolor="#FF0000" uuid="ceb00fff-b046-4e40-a635-0b939d3d01a7"/>
+				<textElement>
+					<font fontName="Arial" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{REP_ID}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="141" height="72" uuid="c98432b9-149d-4650-8021-21761f26222c"/>
+				<imageExpression><![CDATA["src/Reportes/logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="192" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="49" height="15" uuid="caa9accf-5c5e-4496-ba76-d97337e4ca09"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="40" height="15" uuid="8f9b1f45-5bec-4c66-adda-95129b5d6842"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC/CI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="15" width="34" height="15" uuid="dcbe0fd2-025a-4e6a-9b31-d09005d0323f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELF.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="58" height="15" uuid="588b35de-6fdd-43d1-83df-50e27382b4ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="90" height="15" uuid="aa0014a8-29a9-48dd-95ec-b95372995cac"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Entrega:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="15" width="60" height="15" uuid="3b10e96f-e070-4481-b50a-7f3d2eb31957"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serie/IMEI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="30" width="37" height="15" uuid="e98d8fc9-066a-42b9-9a92-efccffae71ff"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="0" y="95" width="389" height="93" uuid="6e08341a-d9c1-4499-a14a-942d0e8b9d99"/>
+			</rectangle>
+			<textField>
+				<reportElement x="49" y="0" width="330" height="15" uuid="a61486d1-a149-4075-8b9f-762398ede25a"/>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="115" height="15" uuid="bec667f0-ad75-41d2-97f1-732d0e41bed8"/>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_CEDULA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="15" width="118" height="15" uuid="dc79081b-e761-46d1-941d-9e19a655ccb0"/>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_TELEFONO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="15" width="159" height="15" uuid="159f79a8-c22f-4585-a3a6-ade07dbd8214"/>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="30" width="100" height="15" uuid="078a6da4-6d70-41eb-948c-9e13c0dd96c2"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_FECHA_DE_ENTREGA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="15" width="100" height="15" uuid="557c2965-8044-4ff9-9ae9-b4d97c069709"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_IMEI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="30" width="118" height="15" uuid="05d7832a-6485-4f7a-b73c-bd7f9b4b0d30"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_MARCA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="65" width="50" height="15" uuid="9e17e840-983f-4420-b586-3423fc323f15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BATERIA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="65" width="30" height="15" uuid="911edd14-5e25-4499-a6a8-f5f7f42ab01a"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_BATERIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="65" width="31" height="15" uuid="557d2f4e-6237-4458-9358-84956ab67c50"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHIP:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="65" width="33" height="15" uuid="c33fdc38-cbb1-408b-9bb2-1ce5ee37cafb"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_CHIP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="65" width="53" height="15" uuid="7b9f796f-012f-455e-ade8-230d4f098eea"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_OTROS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="104" width="369" height="73" uuid="044e12f4-026d-44b8-8c09-0321643475ef"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_DIAGNOSTICO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="90" width="37" height="15" uuid="254154f9-bfbc-41b2-9fcb-c805e92f594e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clave:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="118" width="37" height="15" uuid="7445bdba-6d5b-4d6e-9090-d3ea8d457e66"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patron:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="454" y="118" width="70" height="70" uuid="25abd22b-2d8b-440c-95d9-bdb5f72105a1"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="465" y="127" width="10" height="10" uuid="fd77ba4d-f53e-4edf-9de0-73fae39ddd1c"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="486" y="127" width="10" height="10" uuid="4faed8b7-6bc2-4258-82f7-da503e7a6d83"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="505" y="127" width="10" height="10" uuid="f08996b6-5b33-465d-8160-fdc7bda2c25f"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="465" y="146" width="10" height="10" uuid="430f5a26-a0d9-45d1-b049-f020877a142b"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="486" y="146" width="10" height="10" uuid="016b5e94-8ebe-4126-b7e3-fb101fc8d2e4"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="505" y="146" width="10" height="10" uuid="8a2ad2d4-bcb6-43ad-a6a3-aaecfaa1ff71"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="465" y="167" width="10" height="10" uuid="bb572a03-fba5-4253-9701-b1d1e3731461"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="486" y="167" width="10" height="10" uuid="65f58343-8302-4e62-83c6-e5c08d3680b7"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="505" y="167" width="10" height="10" uuid="dbffce6c-a0d1-44bc-b80d-a96f41ce6e03"/>
+			</rectangle>
+			<line>
+				<reportElement x="440" y="104" width="113" height="1" uuid="753a45f2-5f6d-4e90-b8a8-8c296ad9ea8f"/>
+			</line>
+			<staticText>
+				<reportElement x="159" y="65" width="58" height="15" uuid="da6df0d5-ba53-41d3-8acc-cbc5711e38d2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEMORIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="65" width="32" height="15" uuid="26564fd9-698c-4f3d-bb14-53c8d812f734"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAPA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="65" width="67" height="15" uuid="28fff159-f2d4-4169-a346-1d2784262d23"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARGADOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="65" width="46" height="15" uuid="40dbde7f-21ad-4f25-9b38-c34aef84470b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OTROS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="217" y="65" width="29" height="15" uuid="1d825f2b-9f46-4fcd-8639-9c22d7ff8256"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_MEMORIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="65" width="29" height="15" uuid="6e7d7f51-b16b-434e-865b-f1d4bf4fdcd7"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_TAPA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="65" width="37" height="15" uuid="42fc82c1-148f-4c83-a0e2-a9936ab22e1c"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_CARGADOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="83" width="80" height="15" uuid="b7ff3533-9667-40f4-95ee-f56d821dff6e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSTICO:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement x="456" y="45" width="44" height="15" uuid="d59a65c9-f3b8-4d9c-bf8c-d52c7b1b4d1e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="332" height="93" uuid="5dc17e42-d899-4f3a-9c6d-f8547c6042f5"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[1) El  equipo  tiene  riesgo  de  no encender luego de los procesos de reparación, actualización de software o  desbloqueo  cuando  se  encuentra sulfutado (mojado con cualquier liquido) o ha sido anteriormente manipulado en otros talleres, por lo que no nos responsabilizamos del equipo con estos antecedentes.
+
+2) La Garantía no será válida si el sello de seguridad esta roto o ha sido retirado, en estos casos no habra responsabilidad sobre el equipo.
+
+3) La información del equipo será responsabilidad del dueño. Por lo que recomendamos respaldar la misma antes de realizar su ingreso.
+4) Si el equipo no ha sido retirado en el transcurso de 30 días se cobrará un valor de $5,00 por costo de almacenamiento.
+5) Este es el único documento legal para retirar el equipo receptado. En caso de perdida se cobrara un valor adicional de $5 por reimpresion del mismo, se debrá presentar la cédula de identidad.
+
+5) Si el equio no ha sido retirado por el cliente en los siguientes 30 días a partir de su recepción, se considerará como  abandonado  y  no habrá responsabilidad por el mismo. El cliente con su firma y Nº de cédula acepta las condiciones mencionadas.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="100" width="100" height="12" uuid="d9625788-6edf-46b2-a871-72147732f040"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[FIRMA CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="52" width="100" height="12" uuid="8b53e59e-4d6e-4b6b-bb01-ed6ca40a9f3a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[FIRMA RESPONSABLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="453" y="73" width="50" height="15" uuid="d6c98062-a034-4b47-83da-6603e9cc5dae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABONO $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="97" width="44" height="15" uuid="c69405cb-2471-404a-a21f-77a34e1c2b60"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDO $]]></text>
+			</staticText>
+			<line>
+				<reportElement x="340" y="51" width="100" height="1" uuid="8d6080c9-2b5b-4ade-b6cc-205012dc9547"/>
+			</line>
+			<line>
+				<reportElement x="339" y="99" width="100" height="1" uuid="2e443124-26af-4aa5-8bd6-a50ba3e588a3"/>
+			</line>
+			<textField>
+				<reportElement x="503" y="44" width="52" height="15" uuid="6df6be53-f9f3-46a5-9dd2-c45855b420f8"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="73" width="52" height="15" uuid="e391f655-0ee9-40f1-b966-d1a2d8242447"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_ABONO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="97" width="52" height="15" uuid="a10e7c76-1e6f-4f1e-aa1c-43cc0339feb4"/>
+				<textFieldExpression><![CDATA[$F{REPARACION_SALDO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

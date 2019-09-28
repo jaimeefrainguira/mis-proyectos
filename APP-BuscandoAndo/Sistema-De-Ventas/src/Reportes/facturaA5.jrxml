@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="facturaA5" language="groovy" pageWidth="623" pageHeight="454" columnWidth="583" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c857bf48-41c2-4fd3-b524-da0949c26d9b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numeroFactura" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="numeroDeFactrua" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     FACTURA_CAB.`FAC_CAB_ID` AS FACTURA_CAB_FAC_CAB_ID,
+     FACTURA_CAB.`FAC_CAB_FECHA` AS FACTURA_CAB_FAC_CAB_FECHA,
+     FACTURA_CAB.`FAC_CAB_SUBTOTAL` AS FACTURA_CAB_FAC_CAB_SUBTOTAL,
+     FACTURA_CAB.`FAC_CAB_IVA` AS FACTURA_CAB_FAC_CAB_IVA,
+     FACTURA_CAB.`FAC_CAB_TOTAL` AS FACTURA_CAB_FAC_CAB_TOTAL,
+     FACTURA_CAB.`FAC_CAB_FORMA_P` AS FACTURA_CAB_FAC_CAB_FORMA_P,
+     FACTURA_DETALLE.`FAC_DET_CANTIDAD` AS FACTURA_DETALLE_FAC_DET_CANTIDAD,
+     FACTURA_DETALLE.`FAC_DET_PVP` AS FACTURA_DETALLE_FAC_DET_PVP,
+     FACTURA_DETALLE.`FAC_DET_TOTAL` AS FACTURA_DETALLE_FAC_DET_TOTAL,
+     PERSONA.`PER_CEDULA` AS PERSONA_PER_CEDULA,
+     PERSONA.`PER_NOMBRE` AS PERSONA_PER_NOMBRE,
+     PERSONA.`PER_DIRECCION` AS PERSONA_PER_DIRECCION,
+     PERSONA.`PER_TELEFONO` AS PERSONA_PER_TELEFONO,
+     PERSONA.`PER_CORREO` AS PERSONA_PER_CORREO,
+     PRODUCTO.`PRO_DESCRIPCION` AS PRODUCTO_PRO_DESCRIPCION
+FROM
+     `FACTURA_CAB` FACTURA_CAB INNER JOIN `FACTURA_DETALLE` FACTURA_DETALLE ON FACTURA_CAB.`FAC_CAB_ID` = FACTURA_DETALLE.`FAC_CAB_ID`
+     INNER JOIN `PERSONA` PERSONA ON FACTURA_CAB.`PER_ID` = PERSONA.`PER_ID`
+     INNER JOIN `PRODUCTO` PRODUCTO ON FACTURA_DETALLE.`PRO_ID` = PRODUCTO.`PRO_ID`
+	WHERE FACTURA_CAB.`FAC_CAB_ID`=$P{numeroFactura}]]>
+	</queryString>
+	<field name="FACTURA_CAB_FAC_CAB_ID" class="java.lang.Integer"/>
+	<field name="FACTURA_CAB_FAC_CAB_FECHA" class="java.sql.Timestamp"/>
+	<field name="FACTURA_CAB_FAC_CAB_SUBTOTAL" class="java.lang.Double"/>
+	<field name="FACTURA_CAB_FAC_CAB_IVA" class="java.lang.Double"/>
+	<field name="FACTURA_CAB_FAC_CAB_TOTAL" class="java.lang.Double"/>
+	<field name="FACTURA_CAB_FAC_CAB_FORMA_P" class="java.lang.Integer"/>
+	<field name="FACTURA_DETALLE_FAC_DET_CANTIDAD" class="java.lang.Integer"/>
+	<field name="FACTURA_DETALLE_FAC_DET_PVP" class="java.lang.Double"/>
+	<field name="FACTURA_DETALLE_FAC_DET_TOTAL" class="java.lang.Double"/>
+	<field name="PERSONA_PER_CEDULA" class="java.lang.String"/>
+	<field name="PERSONA_PER_NOMBRE" class="java.lang.String"/>
+	<field name="PERSONA_PER_DIRECCION" class="java.lang.String"/>
+	<field name="PERSONA_PER_TELEFONO" class="java.lang.String"/>
+	<field name="PERSONA_PER_CORREO" class="java.lang.String"/>
+	<field name="PRODUCTO_PRO_DESCRIPCION" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="38" width="155" height="15" uuid="ee50f394-3bc2-4ac4-ad69-86a2f10b7c31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_DIRECCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="0" width="187" height="15" uuid="8917c6d1-1526-4b6e-828f-088e1a2863ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="54" y="19" width="114" height="15" uuid="30c83e55-3716-4d63-a3a4-0b049dcf9d4f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="19" width="137" height="15" uuid="b0f9c343-3c36-4d90-9391-e3f8e7086014"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_CEDULA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="37" width="156" height="15" uuid="8be9d565-7d8d-4942-ac0b-e33f85d2325c"/>
+				<textFieldExpression><![CDATA[$F{PERSONA_PER_TELEFONO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="86" y="0" width="220" height="15" uuid="bac68875-d504-4a26-9eec-de07cb1441d9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PRODUCTO_PRO_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="0" width="30" height="15" uuid="6a2615b2-9ac5-407e-8a20-ddfd6a8c49da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_DETALLE_FAC_DET_CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="45" height="15" uuid="478747ba-7548-46d9-9759-8b4f95edafcf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_DETALLE_FAC_DET_PVP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="49" height="15" uuid="3342a7a0-2bb6-4b23-8a0d-07a216a2eae9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_DETALLE_FAC_DET_TOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="113" splitType="Stretch">
+			<textField>
+				<reportElement x="487" y="20" width="45" height="15" uuid="2ed94195-1abc-4763-86a2-a29c0abc7166"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_CAB_FAC_CAB_SUBTOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="69" width="45" height="15" uuid="365d0c09-9e23-4872-ae3d-017f6925d76c"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_CAB_FAC_CAB_IVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="87" width="45" height="15" uuid="e02b33fc-c8c1-46c3-af5d-cfd4249cb9e1"/>
+				<textElement textAlignment="Right">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FACTURA_CAB_FAC_CAB_TOTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="441" y="70" width="18" height="15" uuid="0991c279-e38f-41c6-8673-d975ed7e8c20"/>
+				<text><![CDATA[12]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
