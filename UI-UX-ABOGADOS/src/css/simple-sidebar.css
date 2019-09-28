@@ -1,0 +1,220 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+
+
+#wrapper {
+  padding-left: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 0px;
+}
+
+
+
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #343A40;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+#wrapper.toggled #sidebar-wrapper .nav-label{
+   display: inline;
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+#page-content-wrapper {
+
+  width: 100%;
+  
+  padding: 0px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  
+  margin-right: -250px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li  {
+  text-indent: 7px;
+  font-size: 30px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #1C7CD5;
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+li .active  .nav-label
+{
+  color: white;
+}
+
+li .active
+{
+    background-color: #1C7CD5;
+    color: white;
+}
+li .active .jaime-icon-
+{
+    color: white;
+}
+.nav-label
+{
+  display: none;
+}
+
+
+#mi-boton.toggled
+  {
+    
+    color: white;
+  }
+
+  #mi-boton
+  {
+    margin-left: -8px;
+    color: #B5DEFC;
+    font-size: 20px;
+  }
+
+
+
+@media(min-width:768px) 
+{
+
+  #sidebar-wrapper:hover
+  {
+    width: 250px;
+  }
+
+  #sidebar-wrapper:hover li
+  {
+    text-indent: 7px;
+    line-height: 55px;
+    font-size: 25px;
+
+  }
+   #sidebar-wrapper:hover li .nav-label
+  {
+    display: inline;
+    font-size: 18px;
+    padding-left: 15px;
+
+  }
+  
+
+
+
+ 
+
+  #wrapper 
+  {
+    padding-left: 60px;
+  }
+
+  #sidebar-wrapper 
+  {
+    width: 60px;
+  }
+
+  #page-content-wrapper 
+  {
+    padding: 0px;
+    position: relative;
+  }
+  
+  #wrapper.toggled #page-content-wrapper 
+  {
+    position: relative;
+    margin-right: 0;
+  }
+
+
+  #wrapper.toggled 
+  {
+    padding-left: 250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper 
+  {
+    width: 250px;
+  }
+
+
+  #mi-boton.toggled
+  {
+    color: white;
+  }
+
+  #mi-boton
+  {
+    margin-left: 0px;
+    color: #B5DEFC;
+    padding-right: 25px;
+    font-size: 20px;
+  }
+
+  
+}

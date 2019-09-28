@@ -1,0 +1,338 @@
+
+.navbar-global 
+{
+  background-color: indigo;
+}
+
+.navbar-global .navbar-brand 
+{
+  color: white;
+}
+
+.navbar-global .navbar-user > li > a
+{
+  color: white;
+}
+
+/*configuracion de el menu vertical*/
+.navbar-primary 
+{
+    background-color: #343E48;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    top: 51px;
+    width: 60px;
+    position:fixed;
+    z-index: 8;
+    overflow: hidden;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;  
+}
+
+
+
+/*ancho del menu horizontal cuando esta desabilitado*/
+.navbar-primary.collapsed 
+{
+  width: 200px;
+  
+  /*padding-left: 5px;*/
+}
+
+/*al iniciar se muestra el menu horizontal desactivado*/
+.navbar-primary .jaime-icon-
+{
+    font-size: 25px;
+}
+
+.navbar-primary .icon-m-
+{
+    font-size: 25px;
+}
+
+.navbar-primary.collapsed .jaime-icon- {
+  font-size: 20px;
+}
+.navbar-primary.collapsed .icon-m- {
+  font-size: 20px;
+}
+
+.navbar-primary-menu li a {
+  /*display: none;*/
+  
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom:solid 1px #444;
+  color: #ccc;
+}
+.navbar-primary .nav-label
+{
+    /*display: none;*/
+}
+.navbar-primary.collapsed .nav-label
+{
+    /*visibility: visible;*/
+    display: inline;
+}
+.nav-label
+{
+    /*visibility: hidden;*/
+    display: none;
+}
+.btn-link:hover
+{
+    text-decoration: none;
+}
+
+
+
+​
+.navbar-primary-menu li a:hover .jaime-icon- {
+  color: orchid;
+}
+
+/*boton del menu vertical al iniciar*/
+.jaime-icon-menu
+{
+    padding-left: 5px;
+    padding-right: 30px;
+    font-size: 22px;    
+    color:#B5DEFC; 
+    
+}
+/*boton del menu vertical al aplastar*/
+.collapsed3
+{
+    color:white;  
+}
+li .active
+{
+    background-color: #1C7CD5;
+}
+li .active .jaime-icon-
+{
+    color: white;
+}
+
+
+/*.jaime-icon--th-large:hover
+{
+    color:white;
+}*/
+
+
+
+.navbar-primary
+{
+    padding-top: 18px;
+}
+
+.navbar-primary-menu,
+.navbar-primary-menu li 
+{
+  margin:0; padding:0;
+  list-style: none;
+}
+
+.navbar-primary-menu li a 
+{
+  display: block;
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom:solid 1px #444;
+  color: #ccc;
+}
+
+
+.navbar-primary-menu li a:hover 
+{
+  background-color: #1C7CD5;
+  text-decoration: none;
+  color: white;
+}
+/*separacion entre los iconos y el item del menu vertical*/
+.navbar-primary-menu li a .jaime-icon- 
+{
+  margin-right: 20px;
+}
+.navbar-primary-menu li a .icon-m-
+{
+  margin-right: 20px;
+}
+
+
+.navbar-primary-menu li a:hover .jaime-icon- 
+{
+  color: white;
+}
+
+.main-content {
+  /*margin-top: 60px;*/
+  margin-left: 60px;
+  /*padding: 20px;*/
+}
+
+.collapsed + .main-content {
+  margin-left: 200px;
+}
+
+
+.navbar-primary.collapsed2 
+{
+  padding-top: 60px;
+}
+.collapsed2 + .navbar-primary
+{
+    padding-top: 10px;
+}
+.menuhorizontal
+{
+    background: #0E3E6B;
+background: -moz-linear-gradient(top, #0B51C5 0%, #1C7CD5 50%, #0B51C5 100%);
+background: -webkit-linear-gradient(top, #0B51C5 0%, #1C7CD5 50%, #0B51C5 100%);
+background: linear-gradient(to bottom, #0B51C5 0%, #1C7CD5 50%, #0B51C5 100%);
+}
+.botonesmenuhorizontal a.btn-link
+{
+    color: #B5DEFC;
+}
+.botonesmenuhorizontal a.btn-link:hover
+{
+    color: white;
+    text-decoration: none;
+}
+.botonesmenuhorizontal .jaime-icon-
+{
+    font-size: 25px;
+}
+.botonesmenuhorizontal .jaime-icon-
+{
+    font-size: 25px;
+}
+.rounded-circle
+{
+    width: 30px;     
+}
+
+.fotousuario
+{
+    color: white;
+    text-decoration: none;
+}
+.fotousuario:hover
+{
+    
+    color: white;
+    text-decoration: none;
+}
+
+.nomUser
+{
+    color: white;
+}
+ 
+
+.font-size-display-1 {font-size:1rem;} /*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+ 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+@media (min-width: 200px) {  
+  .font-size-display-1 {font-size:1.5rem;} /*1rem = 16px*/
+}
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+  .font-size-display-1 {font-size:2.0rem;} /*1rem = 16px*/
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  .font-size-display-1 {font-size:3rem;} /*1rem = 16px*/
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .font-size-display-1 {font-size:3.5rem;} /*1rem = 16px*/
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  .font-size-display-1 {font-size:4rem;} /*1rem = 16px*/    
+}
+ 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+ 
+/* Set width to make card deck cards 100% width */
+@media (min-width: 950px) and (max-width:1100px) { 
+  .font-size {font-size:3.75rem;color:red;} 
+}
+
+
+
+.empresa
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #245381;
+    color: white;
+}
+
+
+
+.card-title
+{
+    color: #1C7CD5;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 55px;
+  background-color: #F4F4F4;
+  /*background-color: #343E48;*/
+}
+.footer {
+    
+  position: absolute;
+  bottom: 0;
+  /*width: 100%;*/
+  padding-bottom: 55px;
+  /* Set the fixed height of the footer here */
+  height: 20px;
+  line-height: 20px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+  
+  
+}
+.breadcrumb
+{
+    margin-bottom: 0px;
+    border-radius: 0;
+}
+.cardContenido
+{
+-webkit-box-shadow: 5px 5px 17px 0px rgba(0,0,0,0.49); 
+box-shadow: 5px 5px 17px 0px rgba(0,0,0,0.49);
+}
+.dropdown-toggle::after{
+  content:none;
+}
+
+
