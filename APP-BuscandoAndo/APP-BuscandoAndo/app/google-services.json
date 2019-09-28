@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "241580252513",
+    "firebase_url": "https://buscando-ando.firebaseio.com",
+    "project_id": "buscando-ando",
+    "storage_bucket": "buscando-ando.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241580252513:android:8b935271766d147c",
+        "android_client_info": {
+          "package_name": "com.hugo.empresa.buscandoando"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241580252513-vjao9iji08896sr752pv98ds565bt5vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaaQML2bCJ66aHHjOFx1x3u6jrckcD8jU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

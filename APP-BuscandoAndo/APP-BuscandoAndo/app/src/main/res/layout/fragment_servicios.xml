@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spnCiudad"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/txtbuscaNegocio"
+            android:layout_width="170sp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20sp"
+            android:background="@drawable/buscador"
+            android:ems="10"
+            android:hint="Buscar"
+            android:inputType="textPersonName"
+            android:paddingLeft="50dp" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/serRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/card_view_servicio1">
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:id="@+id/layoutVacioSolicitudes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:tint="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="No existen servicios publicados."
+            android:textColor="#000000" />
+    </LinearLayout>
+</LinearLayout>

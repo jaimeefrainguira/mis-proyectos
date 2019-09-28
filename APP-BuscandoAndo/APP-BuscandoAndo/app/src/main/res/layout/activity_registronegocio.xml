@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_app"
+    tools:context="com.hugo.empresa.buscandoando.configuracion.registronegocio">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:background="#20CD74"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:buttonGravity="top"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="60dp"
+                android:paddingBottom="10dp"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/retroseso" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Publica empresa o servicio"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <LinearLayout
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingRight="0dp"
+                    android:weightSum="1">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/txtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/form_margin_top"
+                        android:hint="Nombre"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txtnombrenegocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:theme="@style/imputtexto" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/txtd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/form_margin_top"
+                        android:hint="Descripción"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txtdescripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:theme="@style/imputtexto" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+
+                    <Spinner
+                        android:id="@+id/spprovincia"
+                        android:prompt="@string/seleccione_una_provincia"
+                        android:spinnerMode="dialog"
+                        style="@style/estilospiner" />
+
+                    <Spinner
+                        android:id="@+id/spciudad"
+                        style="@style/estilospiner" />
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/txtdir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_margin_top"
+                        android:hint="Dirección / Barrio"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txtdireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:theme="@style/imputtexto" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/txttel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_margin_top"
+                        android:hint="Telefono Convencional"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txttelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:theme="@style/imputtexto" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/txtcel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_margin_top"
+                        android:hint="Celular"
+                        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/txtcelular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:theme="@style/imputtexto" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <RadioGroup
+                        android:layout_width="305dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbtEmpresas"
+                            android:checked="true"
+                            style="@style/estiloradiobutton"
+                            android:text="Empresa"
+                            app:buttonTint="@color/colorPrimary" />
+
+                        <RadioButton
+                            android:id="@+id/rbtServicios"
+                            style="@style/estiloradiobutton"
+                            android:text="Servicio"
+                            app:buttonTint="@color/colorPrimary" />
+                    </RadioGroup>
+                    <Spinner
+                        android:id="@+id/spcategoria"
+                        style="@style/estilospiner" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+                    <Button
+                        android:id="@+id/btnGuardar"
+                        style="@style/estiloboton"
+                        android:text="GUARDAR" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+
+                    <Button
+                        android:id="@+id/btnCancelar"
+                        style="@style/estiloboton"
+                        android:text="CANCELAR" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

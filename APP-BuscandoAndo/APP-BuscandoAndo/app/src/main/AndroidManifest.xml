@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hugo.empresa.buscandoando">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:name=".app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.hugo.empresa.buscandoando.login"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.hugo.empresa.buscandoando.loginmenbrecia"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.hugo.empresa.buscandoando.intro"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hugo.empresa.buscandoando.registro"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity
+            android:name="com.hugo.empresa.buscandoando.submenu"
+            android:label="@string/title_activity_submenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.hugo.empresa.buscandoando.submenuconfiguracion"
+            android:label="@string/title_activity_submenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.hugo.empresa.buscandoando.menu"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name="com.hugo.empresa.buscandoando.configuracion.menuconfiguracion"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.editar_perfil"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.editar_fotoperfil"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".configuracion.ActivityConfiguracion">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.configuracion.crudnegocio"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.configuracion.registronegocio"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.producto.registroproducto"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.configuracion.registroservicio"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.empresas.perfilempresa"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.servicios.perfilservicio"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.hugo.empresa.buscandoando.uploadImagen"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <service android:name="com.hugo.empresa.buscandoando.Services.FireBaseId"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+            </intent-filter>
+        </service>
+        <service android:name="com.hugo.empresa.buscandoando.Services.FireBaseServiceMensaje"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

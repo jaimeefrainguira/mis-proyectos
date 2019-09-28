@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hugo.empresa.buscandoando.producto.registroproducto">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="10sp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/retroseso" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/txtciudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/colorDark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardviewPerfilNegocio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/fondo_negocio_item">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#20CD74"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/txtimagennegocio"
+                                android:layout_width="match_parent"
+                                android:layout_height="110sp"
+                                android:paddingLeft="10dp"
+                                android:src="@drawable/fotoperfil" />
+
+                            <TextView
+                                android:id="@+id/txtnombre"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingLeft="25sp"
+                                android:paddingRight="25sp"
+                                android:paddingBottom="25sp"
+                                android:textColor="?attr/colorBackgroundFloating"
+                                android:textSize="17pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtdescripcion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="25sp"
+                                android:paddingRight="25sp"
+                                android:textColor="@color/colorDark"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="-5sp"
+                            android:background="@drawable/fondodivisor"
+                            android:minHeight="36pt"
+                            android:orientation="vertical" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorDark"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="25sp"
+                            android:paddingTop="10sp"
+                            android:paddingRight="25sp"
+                            android:paddingBottom="25sp">
+
+                            <TextView
+                                android:id="@+id/txtdireccion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Direccion:"
+                                android:textColor="?attr/colorBackgroundFloating"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingTop="25sp"
+                                android:paddingBottom="25sp">
+
+                                <TextView
+                                    android:id="@+id/txtcelular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Celular:"
+                                    android:textColor="?attr/colorBackgroundFloating"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/txttelefono"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20sp"
+                                    android:text="Telefono:"
+                                    android:textColor="?attr/colorBackgroundFloating"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btnLlamar"
+                                style="@style/estiloboton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Enviar mensaje" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

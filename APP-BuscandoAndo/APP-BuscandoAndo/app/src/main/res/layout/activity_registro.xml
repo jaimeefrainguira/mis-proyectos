@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_app"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:background="#20CD74"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:buttonGravity="top"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="60dp"
+                android:paddingBottom="10dp"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/btnRetrocede"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/retroseso" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="REGISTRO"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="305dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingRight="0dp"
+                android:weightSum="1">
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtregnombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Nombre"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtNombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtregapellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Apellido"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtApellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtcabregcelular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Celular"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spnProvincia"
+                    style="@style/estilospiner" />
+
+                <Spinner
+                    android:id="@+id/spnCiudad"
+                    style="@style/estilospiner" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtcabregcorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Correo Electronico"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtcanregcontra"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Contraseña"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtcabregrepcont"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/form_margin_top"
+                    android:hint="Repita contraseña"
+                    app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/txtRepPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:theme="@style/imputtexto" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <RadioGroup
+                    android:layout_width="305dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbtHombre"
+                        android:checked="true"
+                        style="@style/estiloradiobutton"
+                        android:text="Hombre"
+                        app:buttonTint="@color/colorPrimary" />
+
+                    <RadioButton
+                        android:id="@+id/rbtMujer"
+                        style="@style/estiloradiobutton"
+                        android:text="Mujer"
+                        app:buttonTint="@color/colorPrimary" />
+                </RadioGroup>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <CheckBox
+
+                    android:id="@+id/chbTerminos"
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent"
+                    android:text="He leido los terminos y condiciones."
+                    android:textColor="#0FA056"
+                    app:buttonTint="#20CD74" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:id="@+id/btn_Guardar"
+                    style="@style/estiloboton"
+                    android:text="Registrar" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
